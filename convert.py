@@ -13,12 +13,12 @@ SIZE = (28, 28)
 
 def allImages(DATAPATH = DATAPATH):
 	os.chdir(DATAPATH)
-	for _ in os.listdir():
+	for j in os.listdir():
 		os.chdir(os.path.join(DATAPATH, _))
 		for i in os.listdir():
 			i = cv2.resize(cv2.imread(i), SIZE) 
 			imagesCache.append(i)
-			labelCache.append(_)
+			labelCache.append(j)
 
 	return imagesCache, labelCache
 
